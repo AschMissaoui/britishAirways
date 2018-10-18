@@ -33,9 +33,12 @@ public class BritishAirwaysBuildUp {
 
 
     }
-    public void buildAirline(Fluglinie F){
-        F = new Fluglinie("BA" , "British Airways")
+    public static void buildAirline(Fluglinie F){
+        F = new Fluglinie("BA" , "British Airways");
 
+    }
+    public static void buildPilots(Pilot p1 , Pilot p2)(){
+      //....
     }
 
 
