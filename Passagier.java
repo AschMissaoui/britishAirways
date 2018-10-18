@@ -58,8 +58,8 @@ public class Passagier {
     }
 
     public String toString() {
-        return "Passagier: " + name +
-                " " + nachname;
+        return "Passagier " + name +
+                " " + nachname + " auf Platz " + sitzplatz ;
     }
 
     public void geVerspaetet() {

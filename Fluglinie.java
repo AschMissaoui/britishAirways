@@ -64,10 +64,7 @@ public class Fluglinie {
         return S;
     }
 
-    public void buildAirline(Fluglinie F){
-        F = Fluglinie("BA" , "British Airways")
 
-    }
 
 
 

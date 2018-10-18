@@ -1,6 +1,5 @@
-import java.util.HashMap;
-import java.util.Map;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * @author Darko Miklic
@@ -19,7 +18,9 @@ public class Flug {
     private Flugzeug flugzeug;
     private Fluglinie fluglinie;
     private Flughafen zwischenlandung;
-    private Map<Sitzplatz, Passagier> passagierListe = new HashMap<Sitzplatz, Passagier>();
+    private Stadt startStadt;
+    private Stadt zielStadt;
+    private ArrayList<Passagier> PassagierListe = new ArrayList<>() ;
 
 
     /**
@@ -72,8 +73,8 @@ public class Flug {
 
     public Flugzeug getFlugzeug() { return flugzeug; }
 
-    public void addPassagier(Sitzplatz s, Passagier p) {
-        passagierListe.put(s, p);
+    public void addPassagier( Passagier p) {
+        PassagierListe.add(p);
     }
 
     public void setZweiPiloten(Pilot p1, Pilot p2) {
@@ -89,7 +90,7 @@ public class Flug {
         this.flugNummer = flugNummer;
     }
     public void setDatum(String datum){
-        this.datum=datum;
+        this.datum = datum;
     }
     public void setFlugzeug(Flugzeug flugzeug){
         this.flugzeug = flugzeug;
@@ -109,4 +110,13 @@ public class Flug {
         System.out.println(toString() + " verspaetet sich.");
     }
 
+    public void show() {
+
+        System.out.println("angeboten von " + fluglinie);
+        System.out.println(pilot1 + "[und " + copilot1 +"]");
+        System.out.println("startet in " + startFlughafen +" bei " + startStadt);
+        System.out.println("landet in " + zielFlughafen + " bei " + zielStadt);
+        System.out.println("wird durchgef�hrt mit "+ flugzeug);
+        System.out.println("befördert " + PassagierListe.get(0).toString() + PassagierListe.get(1).toString());
+    }
 }

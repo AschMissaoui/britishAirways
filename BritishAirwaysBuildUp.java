@@ -1,20 +1,20 @@
 
 public class BritishAirwaysBuildUp {
-    Fluglinie theAirline;
-    Pilot thePilot;
-    Pilot theCopilot;
-    Flug outFlight;
-    Flug returnFlight;
-    Passagier passagier1;
-    Passagier passagier2;
-    Flugzeug theAirplane;
-    Stadt stadt1;
-    Stadt stadt2;
-    Flughafen flughafen1;
-    Flughafen flughafen2;
-    Sitzplatz sitzplatz1;
-    Sitzplatz sitzplatz2;
-    Sitzplatz sitzplatz3;
+    static Fluglinie theAirline;
+    static Pilot thePilot;
+    static Pilot theCopilot;
+    static Flug outFlight;
+    static Flug returnFlight;
+    static Passagier passagier1;
+    static Passagier passagier2;
+    static Flugzeug theAirplane;
+    static Stadt stadt1;
+    static Stadt stadt2;
+    static Flughafen flughafen1;
+    static Flughafen flughafen2;
+    static Sitzplatz sitzplatz1;
+    static Sitzplatz sitzplatz2;
+    static Sitzplatz sitzplatz3;
 
 
     public static void main(String[] args) {
@@ -31,6 +31,10 @@ public class BritishAirwaysBuildUp {
         outFlight.show();
         returnFlight.show();
 
+
+    }
+    public void buildAirline(Fluglinie F){
+        F = new Fluglinie("BA" , "British Airways")
 
     }
 
