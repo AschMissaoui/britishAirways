@@ -15,11 +15,10 @@ public class Flugzeug {
   private Sitzplatz[] sitzplaetze;
   private ArrayList<Flug> fluege= new ArrayList<Flug>();
   
-  public Flugzeug(String modell, int serienNr, int flugStunden, int tailNr, int sitzplatzAnzahl) throws Exception{
-    if(sitzplatzAnzahl <= 853){
-      this.sitzplaetze = new Sitzplatz[sitzplatzAnzahl];
-    }
-    else throw new Exception();
+  public Flugzeug(String modell, int serienNr, int flugStunden, int tailNr, int sitzplatzAnzahl) {
+    if(sitzplatzAnzahl <= 853) this.sitzplaetze = new Sitzplatz[sitzplatzAnzahl];
+
+
     
     this.modell = modell;
     this.serienNr = serienNr;

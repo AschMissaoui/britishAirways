@@ -17,28 +17,69 @@ public class BritishAirwaysBuildUp {
     static Sitzplatz sitzplatz3;
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
 
-        buildAirline(theAirline);
-        buildPilots(thePilot , theCopilot) ;
-        buildFlight(outFlight , returnFlight) ;
-        buildPassengers(passagier1 , passagier2);
-        buildPlane(theAirplane);
-        buildCity(stadt1 , stadt2);
-        buildAirports(flughafen1 , flughafen2);
-        buildSeats(sitzplatz1 , sitzplatz2 , sitzplatz3);
+        buildAirline();
+        buildPilots() ;
+        buildFlight() ;
+        buildPassengers();
+        buildPlane();
+        buildCity();
+        buildAirports();
+        buildSeats();
 
-        outFlight.show();
-        returnFlight.show();
+       outFlight.show(); /** Mistake not found */
+       returnFlight.show();
 
-
-    }
-    public static void buildAirline(Fluglinie F){
-        F = new Fluglinie("BA" , "British Airways");
 
     }
-    public static void buildPilots(Pilot p1 , Pilot p2)(){
-      //....
+    public static void buildAirline(){
+        theAirline = new Fluglinie("BA" , "British Airways");
+
+    }
+    public static void buildPilots() {
+
+       thePilot = new Pilot("chris", 7, theAirline, outFlight);
+
+       theCopilot = new Pilot("Adam" , 8 , theAirline ,outFlight) ;
+    }
+
+    public static void buildFlight() {
+        outFlight = new Flug("123", "20.10.2018", flughafen1,
+                flughafen2, theAirplane, theAirline,
+                thePilot , theCopilot , stadt1 , stadt2 ) ;
+        outFlight.setFlughaefen(flughafen1 , flughafen2);
+        returnFlight = new Flug("132", "27.10.2018", flughafen2,
+                flughafen1, theAirplane, theAirline,
+                thePilot , theCopilot , stadt1 , stadt2 ) ;
+        outFlight.setFlughaefen(flughafen2 , flughafen1);
+        outFlight.addPassagier(passagier1);
+        outFlight.addPassagier(passagier2);
+        returnFlight.addPassagier(passagier1);
+    }
+
+    public static void buildPassengers(){
+        passagier1 = new Passagier("Marc", "AKf", "m", outFlight, sitzplatz1) ;
+        passagier2 = new Passagier("Lisa", "AKf", "w", outFlight, sitzplatz2) ;
+    }
+
+    public static void buildPlane() {
+        theAirplane = new Flugzeug("772", 555, 4, 720, 853) ;
+    }
+
+    public static void buildCity(){
+        stadt1 = new Stadt("Stuttgart") ;
+        stadt2 = new Stadt("New York") ;
+    }
+
+    public static void buildAirports(){
+        flughafen1 = new Flughafen("Stuttgart Airport" , "STR");
+        flughafen2 = new Flughafen("LaGuardia Airport" , "LGA") ;
+    }
+    public static void buildSeats() {
+        sitzplatz1 = new Sitzplatz("C", "12", passagier1,theAirplane);
+        sitzplatz2 = new Sitzplatz("B", "12", passagier2,theAirplane) ;
+        sitzplatz3 = new Sitzplatz("A", "22", passagier1,theAirplane) ;
     }
 
 

@@ -20,7 +20,7 @@ public class Flug {
     private Flughafen zwischenlandung;
     private Stadt startStadt;
     private Stadt zielStadt;
-    private ArrayList<Passagier> PassagierListe = new ArrayList<>() ;
+    public ArrayList<Passagier> PassagierListe = new ArrayList<>() ;
 
 
     /**
@@ -36,7 +36,7 @@ public class Flug {
      */
     public Flug(String flugNummer, String datum, Flughafen startFlughafen,
                 Flughafen zielFlughafen, Flugzeug flugzeug, Fluglinie fluglinie,
-                Pilot pilot1, Pilot copilot1) {
+                Pilot pilot1, Pilot copilot1 , Stadt start , Stadt finish) {
 
         this.flugNummer = flugNummer;
         this.datum = datum;
@@ -46,7 +46,8 @@ public class Flug {
         this.fluglinie = fluglinie;
         this.pilot1 = pilot1;
         this.copilot1 = copilot1;
-
+        this.startStadt = start ;
+        this.zielStadt = finish ;
         System.out.println(toString() + " angelegt.");
     }
 
@@ -73,7 +74,15 @@ public class Flug {
 
     public Flugzeug getFlugzeug() { return flugzeug; }
 
-    public void addPassagier( Passagier p) {
+    public Stadt getStartStadt() {
+        return startStadt;
+    }
+
+    public Stadt getZielStadt() {
+        return zielStadt;
+    }
+
+    public void addPassagier(Passagier p) {
         PassagierListe.add(p);
     }
 
@@ -110,13 +119,13 @@ public class Flug {
         System.out.println(toString() + " verspaetet sich.");
     }
 
-    public void show() {
+   public void show() {
 
-        System.out.println("angeboten von " + fluglinie);
-        System.out.println(pilot1 + "[und " + copilot1 +"]");
-        System.out.println("startet in " + startFlughafen +" bei " + startStadt);
-        System.out.println("landet in " + zielFlughafen + " bei " + zielStadt);
-        System.out.println("wird durchgef�hrt mit "+ flugzeug);
+        System.out.println("angeboten von " + getFluglinie().toString());
+        System.out.println(getPilot1().toString() +" und "  + getCopilot1().toString());
+        System.out.println("startet in " + getStartFlughafen().getName() +" bei  " + getStartStadt().toString());
+        System.out.println("landet in " + getZielFlughafen().getName() + " bei " + getZielStadt().toString());
+        System.out.println("wird durchgeführt mit " + getFlugzeug().toString());
         System.out.println("befördert " + PassagierListe.get(0).toString() + PassagierListe.get(1).toString());
     }
 }
