@@ -1,3 +1,5 @@
+
+import java.util.ArrayList;
 /**
  * @author  Marc Nauendorf
  * @version 6. Oktober 2018
@@ -8,7 +10,7 @@ public class Pilot{
 	private String name;
 	private int persNummer;
 	private Fluglinie fluglinie;
-	private Flug flug;
+	private ArrayList <Flug> flüge = new ArrayList<>(3);
 	
 
 	public Pilot(String name, int persNummer, Fluglinie fluglinie, Flug flug) {
@@ -16,7 +18,6 @@ public class Pilot{
 		this.persNummer = persNummer;
 		System.out.println(toString() + " angelegt.");
 		this.fluglinie = fluglinie;
-		this.flug=flug;
 
 	}
 
@@ -27,9 +28,9 @@ public class Pilot{
 
 	public Fluglinie getFluglinie() { return fluglinie; }
 
-	public Flug getFlug() { return flug; }
+	public Flug getFlug() { return flüge.get(0) ; }
 
-	public void setFlug(Flug flug){ this.flug=flug;}
+	public void setFlug(Flug flug){ flüge.add(flug) ;}
 
 	public void setFluglinie(Fluglinie fluglinie){this.fluglinie=fluglinie;}
 
