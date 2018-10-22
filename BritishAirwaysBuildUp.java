@@ -29,7 +29,7 @@ public class BritishAirwaysBuildUp {
         buildFlight() ;
 
 
-       outFlight.show(); /** Mistake not found */
+       outFlight.show();
        returnFlight.show();
 
 
