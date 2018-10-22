@@ -126,6 +126,10 @@ public class Flug {
         System.out.println("startet in " + getStartFlughafen().getName() +" bei  " + getStartStadt().toString());
         System.out.println("landet in " + getZielFlughafen().getName() + " bei " + getZielStadt().toString());
         System.out.println("wird durchgeführt mit " + getFlugzeug().toString());
-        System.out.println("befördert " + PassagierListe.get(0).toString() + PassagierListe.get(1).toString());
+        System.out.print("befördert " );
+        for ( int i = 0;   i < this.PassagierListe.size() ; i++ ){
+            System.out.println(this.PassagierListe.get(i).toString() + " , ");
+        }
+        System.out.println("---------------------------------------------");
     }
 }

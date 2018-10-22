@@ -21,12 +21,13 @@ public class BritishAirwaysBuildUp {
 
         buildAirline();
         buildPilots() ;
-        buildFlight() ;
-        buildPassengers();
-        buildPlane();
         buildCity();
         buildAirports();
+        buildPlane();
         buildSeats();
+        buildPassengers();
+        buildFlight() ;
+
 
        outFlight.show(); /** Mistake not found */
        returnFlight.show();
@@ -48,11 +49,11 @@ public class BritishAirwaysBuildUp {
         outFlight = new Flug("123", "20.10.2018", flughafen1,
                 flughafen2, theAirplane, theAirline,
                 thePilot , theCopilot , stadt1 , stadt2 ) ;
-        outFlight.setFlughaefen(flughafen1 , flughafen2);
         returnFlight = new Flug("132", "27.10.2018", flughafen2,
                 flughafen1, theAirplane, theAirline,
-                thePilot , theCopilot , stadt1 , stadt2 ) ;
-        outFlight.setFlughaefen(flughafen2 , flughafen1);
+                thePilot , theCopilot , stadt2 , stadt1 ) ;
+
+
         outFlight.addPassagier(passagier1);
         outFlight.addPassagier(passagier2);
         returnFlight.addPassagier(passagier1);
